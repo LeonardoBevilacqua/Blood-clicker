@@ -8,15 +8,36 @@ func _ready():
 	self.counter = 0
 	self.counterPerClick = 1
 	self.counterPerSecond = 0.5
-	$ClickerPanel.connect("update_counter", self, "updateCounter")
+	
+	$ClickerPanel.connect("update_counter", self, "updateCounterByClick")
+	self.updateCounterPerSecondLabel()
 
-func updateCounter():
-	self.counter += self.counterPerClick
+func updateCounter(value):
+	self.counter += value
 	self.updateCounterLabel()
+
+func updateCounterByClick():
+	updateCounter(self.counterPerClick)
 
 func _on_Timer_timeout():
-	self.counter += self.counterPerSecond
-	self.updateCounterLabel()
+	updateCounter(self.counterPerSecond)
 
 func updateCounterLabel():
-	$ClickerPanel.updateCounterLabel(int(counter))
+	$ClickerPanel.updateCounterLabel(int(self.counter))
+	
+func updateCounterPerSecondLabel():
+	$ClickerPanel.updateCounterPerSecondLabel(self.counterPerSecond)
+
+func save():
+	print("salvando")
+	var save = {
+		"counter" : self.counter,
+		"counterPerSecond" : self.counterPerSecond,
+		"counterPerClick" : self.counterPerClick
+	}
+	
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	save_game.store_line(to_json(save))
+	save_game.close()
+
