@@ -10,11 +10,11 @@ func _ready():
 		var bt = upgradeButton.instance()
 		
 		bt.init(str("teste ", i+1), i+1, i+1)
-		bt.connect("button_click", self, "buttonClick")
+		bt.connect("button_click", self, "_button_click")
 		
 		$Control/MarginContainer/VBoxContainer.add_child(bt)
 
-func buttonClick(button):
+func _button_click(button):
 	if (int(_counter) < button._price):
 		print("sem creditos")
 	else:
