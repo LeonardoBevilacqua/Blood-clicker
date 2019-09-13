@@ -10,6 +10,7 @@ func _ready():
 	self.counterPerSecond = 0.5
 	
 	$ClickerPanel.connect("update_counter", self, "updateCounterByClick")
+	$UpgradePanel.connect("update_counter_per_second", self, "updateCounterPerSecondByClick")
 	self.updateCounterPerSecondLabel()
 
 func updateCounter(value):
@@ -18,6 +19,13 @@ func updateCounter(value):
 
 func updateCounterByClick():
 	updateCounter(self.counterPerClick)
+	
+func updateCounterPerSecondByClick(value):
+	self.counterPerSecond += value
+	self.counter -= value
+	
+	self.updateCounterPerSecondLabel()
+	self.updateCounterLabel()
 
 func _on_Timer_timeout():
 	updateCounter(self.counterPerSecond)

@@ -8,7 +8,6 @@ func _on_Button_pressed():
 	emit_signal("update_counter")
 
 func updateCounterLabel(counter):
-	
 	labels.get_node("Counter").text = str("Doações: ", counter)
 
 func updateCounterPerSecondLabel(counterPerSecond):
