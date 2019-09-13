@@ -7,7 +7,7 @@ var counterPerSecond
 func _ready():
 	self.counter = 0
 	self.counterPerClick = 1
-	self.counterPerSecond = 0.5
+	self.counterPerSecond = 0
 	
 	$ClickerPanel.connect("update_counter", self, "updateCounterByClick")
 	$UpgradePanel.connect("update_counter_per_second", self, "updateCounterPerSecondByClick")
@@ -15,14 +15,15 @@ func _ready():
 
 func updateCounter(value):
 	self.counter += value
+	$UpgradePanel.set_counter(self.counter)
 	self.updateCounterLabel()
 
 func updateCounterByClick():
 	updateCounter(self.counterPerClick)
 	
-func updateCounterPerSecondByClick(value):
+func updateCounterPerSecondByClick(price, value):
 	self.counterPerSecond += value
-	self.counter -= value
+	self.counter -= price
 	
 	self.updateCounterPerSecondLabel()
 	self.updateCounterLabel()

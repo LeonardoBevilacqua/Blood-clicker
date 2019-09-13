@@ -33,7 +33,7 @@ margin_right = 35.0
 margin_bottom = 21.0
 text = "Teste"
 
-[node name="Value" type="Label" parent="HBoxContainer/Rows"]
+[node name="Price" type="Label" parent="HBoxContainer/Rows"]
 light_mask = 0
 margin_top = 25.0
 margin_right = 35.0
