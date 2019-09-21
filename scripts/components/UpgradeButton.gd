@@ -12,12 +12,12 @@ func init(description, value, price):
 	self._price = price
 	
 	self._set_description_text()
-	self._set_price_text()
+	self.set_price_text()
 	
 func _set_description_text():
 	$HBoxContainer/Rows/Description.text = self._description
 	
-func _set_price_text():
+func set_price_text():
 	$HBoxContainer/Rows/Price.text = str(self._price)
 
 func _on_Button_pressed():

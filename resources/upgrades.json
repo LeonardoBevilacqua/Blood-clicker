@@ -1,14 +1,60 @@
 {
     "upgrades": [
         {
-            "description": "Campanha na TV",
-            "value": 0.3,
-            "price": 25
+            "description": "Distribuir panfletos",
+            "value": 0.1,
+            "price": 10 
         },
         {
-            "description": "Campanha na TV",
-            "value": 0.3,
-            "price": 10
+            "description": "Doador tipo A+",
+            "value": 0.2,
+            "price": 25 
+        },
+        {
+            "description": "Doador tipo A-",
+            "value": 0.4,
+            "price": 50 
+        },
+        {
+            "description": "Doador tipo B+",
+            "value": 0.2,
+            "price": 25 
+        },
+        {
+            "description": "Doador tipo B-",
+            "value": 0.4,
+            "price": 50 
+        },
+
+        {
+            "description": "Doador tipo AB+",
+            "value": 0.6,
+            "price": 75 
+        },
+        {
+            "description": "Doador tipo AB-",
+            "value": 0.8,
+            "price": 80 
+        },
+        {
+            "description": "Doador tipo O+",
+            "value": 1,
+            "price": 85
+        },
+        {
+            "description": "Doador tipo O-",
+            "value": 2,
+            "price": 100
+        },
+        {
+            "description": "Iniciar uma campanha na TV",
+            "value": 5,
+            "price": 120
+        },
+        {
+            "description": "Abrir clinica de doção de sangue",
+            "value": 10,
+            "price": 200 
         }
     ]
 }

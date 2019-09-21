@@ -11,11 +11,11 @@ func _ready():
 	self._generate_buttons(self._load_upgrades())
 
 func _button_click(button):
-	if (int(_counter) < button._price):
-		print("sem creditos")
-	else:
+	if (int(_counter) >= button._price):
 		emit_signal("update_counter_per_second", button._price, button._value)
-		button.queue_free()
+		button._price *= 2
+		button._value *= 2
+		button.set_price_text()
 	
 func set_counter(counter):
 	self._counter = counter
@@ -43,7 +43,7 @@ func _generate_buttons(upgrades):
 		
 		buttons.append(button)
 		
-		$Control/MarginContainer/VBoxContainer.add_child(button)
+		$Control/MarginContainer/ScrollContainer/VBoxContainer.add_child(button)
 
 func _set_buttons_status():
 	for button in buttons:
