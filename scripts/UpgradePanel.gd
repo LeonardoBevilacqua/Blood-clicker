@@ -3,12 +3,16 @@ extends Node
 signal update_counter_per_second
 
 var upgradeButton = preload("res://scenes/components/UpgradeButton.tscn")
+onready var infoPanel = $Control/InfoPanel
+
 var _counter = 0
 
+var infos = []
 var buttons = []
 
 func _ready():
-	self._generate_buttons(self._load_upgrades())
+	self._generate_buttons(self._load_json("upgrades").upgrades)
+	infos = self._load_json("info")
 
 func _button_click(button):
 	if (int(_counter) >= button._price):
@@ -16,19 +20,11 @@ func _button_click(button):
 		button._price *= 2
 		button._value *= 2
 		button.set_price_text()
+		self._show_InfoPanel()
 	
 func set_counter(counter):
 	self._counter = counter
 	self._set_buttons_status()
-	
-func _load_upgrades():
-	var file = File.new()
-	file.open("res://resources/upgrades.json", file.READ)
-	
-	var json = parse_json(file.get_as_text())
-	file.close()
-	
-	return json.upgrades
 	
 func _generate_buttons(upgrades):
 	for upgrade in upgrades:
@@ -56,9 +52,25 @@ func _set_buttons_status():
 			button.get_node("HBoxContainer/Rows").show()
 		elif _counter < button._price:
 			button.get_node("HBoxContainer/Button").disabled = true
+			
+func _show_InfoPanel():
+	randomize()
+	var index = randi() % infos.size()
+	print(index)
+	infoPanel.get_node("Animation").play("show")
+	infoPanel.get_node("Row/Icon").texture = load(infos[index].icon)
+	infoPanel.get_node("Row/Text").text = infos[index].text
+	
+	infoPanel.get_node("Timer").start(10)
 
-
-
-
-
-
+func _on_InfoPanel_timeout():
+	infoPanel.get_node("Animation").play("hide")
+	
+func _load_json(filename):
+	var file = File.new()
+	file.open("res://resources/" + filename + ".json", file.READ)
+	
+	var json = parse_json(file.get_as_text())
+	file.close()
+	
+	return json
