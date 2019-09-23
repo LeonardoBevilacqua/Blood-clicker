@@ -11,21 +11,20 @@
             "price": 25 
         },
         {
-            "description": "Doador tipo A-",
-            "value": 0.4,
-            "price": 50 
-        },
-        {
             "description": "Doador tipo B+",
             "value": 0.2,
             "price": 25 
+        },
+        {
+            "description": "Doador tipo A-",
+            "value": 0.4,
+            "price": 50 
         },
         {
             "description": "Doador tipo B-",
             "value": 0.4,
             "price": 50 
         },
-
         {
             "description": "Doador tipo AB+",
             "value": 0.6,
