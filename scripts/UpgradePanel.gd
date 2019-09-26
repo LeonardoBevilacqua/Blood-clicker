@@ -39,7 +39,7 @@ func _generate_buttons(upgrades):
 		
 		buttons.append(button)
 		
-		$Control/MarginContainer/ScrollContainer/VBoxContainer.add_child(button)
+		$Control/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer.add_child(button)
 
 func _set_buttons_status():
 	for button in buttons:

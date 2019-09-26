@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://resources/blood.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/components/UpgradeButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/sheet_40.png" type="Texture" id=3]
+[ext_resource path="res://resources/fonts/roboto.tres" type="DynamicFont" id=4]
 
 [node name="UpgradeButton" type="PanelContainer"]
 margin_left = 50.0
@@ -12,7 +13,7 @@ script = ExtResource( 2 )
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 1.0
 margin_top = 1.0
-margin_right = 82.0
+margin_right = 86.0
 margin_bottom = 43.0
 
 [node name="Button" type="Button" parent="HBoxContainer"]
@@ -23,21 +24,22 @@ icon = ExtResource( 3 )
 [node name="Rows" type="VBoxContainer" parent="HBoxContainer"]
 light_mask = 0
 margin_left = 46.0
-margin_right = 81.0
+margin_right = 85.0
 margin_bottom = 42.0
 alignment = 1
 
 [node name="Description" type="Label" parent="HBoxContainer/Rows"]
 light_mask = 0
-margin_top = 5.0
-margin_right = 35.0
+margin_right = 39.0
 margin_bottom = 19.0
+custom_fonts/font = ExtResource( 4 )
 text = "Teste"
 
 [node name="Price" type="Label" parent="HBoxContainer/Rows"]
 light_mask = 0
 margin_top = 23.0
-margin_right = 35.0
-margin_bottom = 37.0
+margin_right = 39.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 4 )
 text = "20"
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
