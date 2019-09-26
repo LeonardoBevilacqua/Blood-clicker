@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bag_200.png-9ca7e3427003267700b168ce9d5ab7ea.stex"
+path="res://.import/medical-blood-bag.png-654556fbc006a1efb07fad5c86066280.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bag_200.png"
-dest_files=[ "res://.import/bag_200.png-9ca7e3427003267700b168ce9d5ab7ea.stex" ]
+source_file="res://assets/medical-blood-bag.png"
+dest_files=[ "res://.import/medical-blood-bag.png-654556fbc006a1efb07fad5c86066280.stex" ]
 
 [params]
 
