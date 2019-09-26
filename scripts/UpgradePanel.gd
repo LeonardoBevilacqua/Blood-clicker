@@ -4,6 +4,7 @@ signal update_counter_per_second
 
 var upgradeButton = preload("res://scenes/components/UpgradeButton.tscn")
 onready var infoPanel = $Control/InfoPanel
+var isActiveInfoPanel = false
 
 var _counter = 0
 
@@ -56,15 +57,19 @@ func _set_buttons_status():
 func _show_InfoPanel():
 	randomize()
 	var index = randi() % infos.size()
-	print(index)
-	infoPanel.get_node("Animation").play("show")
+	
+	if !isActiveInfoPanel:
+		infoPanel.get_node("Animation").play("show")
+		
 	infoPanel.get_node("Row/Icon").texture = load(infos[index].icon)
 	infoPanel.get_node("Row/Text").text = infos[index].text
 	
+	isActiveInfoPanel = true
 	infoPanel.get_node("Timer").start(10)
 
 func _on_InfoPanel_timeout():
 	infoPanel.get_node("Animation").play("hide")
+	isActiveInfoPanel = false
 	
 func _load_json(filename):
 	var file = File.new()
