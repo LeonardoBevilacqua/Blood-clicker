@@ -9,13 +9,13 @@ Blood Clicker
 ### Proposta
 <p style="text-align: justify;">
     Foi proposto o desenvolvimento de um jogo com o tema “doação de sangue”. Para início do projeto, foi realizado uma pesquisa sobre o assunto, para fosse coletado informações úteis para ser utilizado dentro do jogo.
-    Após isso, foi iniciado o desenvolvimento do jogo, sendo um “_clicker game_”, no qual seu objetivo é obter pontos ao clicar em um ponto e realizar compra de melhorias para que pontos sejam gerados automaticamente, aumentando o custo e o valor da melhoria a cada compra, inspirado nas mecânicas básica do jogo _cookie clicker_.
+    Após isso, foi iniciado o desenvolvimento do jogo, sendo um “<i>clicker game</i>”, no qual seu objetivo é obter pontos ao clicar em um ponto e realizar compra de melhorias para que pontos sejam gerados automaticamente, aumentando o custo e o valor da melhoria a cada compra, inspirado nas mecânicas básica do jogo <i>cookie clicker</i>.
 </p>
 
 ### Ferramentas utilizadas
 
 <p style="text-align: justify;">
-    Foi utilizado a engine _Godot 3.1_. Sua escolha foi devido aos seguintes pontos:
+    Foi utilizado a engine <i>Godot 3.1</i>. Sua escolha foi devido aos seguintes pontos:
 </p>
 
 * Totalmente gratuita e _open source_.
